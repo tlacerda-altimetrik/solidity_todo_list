@@ -23,6 +23,7 @@ contract TodoList {
     function createTask(string memory _content) public {
         taskCount++;
         tasks[taskCount] = Task(taskCount, _content, false);
+        // emit event => suscribe to listen to events
         emit TaskCreated(taskCount, _content, false);
     }
 
